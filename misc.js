@@ -43,8 +43,7 @@ const load = async () => {
     document.body.appendChild(t);
     const w = qs('.wins', t);
     w.click(); w.click();
-    if (t.offsetTop > localStorage.scroll)
-      scroll(0, localStorage.scroll);
+    if (i == localStorage.look) t.children[0].scrollIntoView();
   }
 }
 
@@ -78,5 +77,5 @@ load().then(init);
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState == 'hidden')
-    localStorage.scroll = scrollY;
+    localStorage.look = Array.from(qsa('.sh')).findIndex(e => e.offsetTop > scrollY) + 1;
 });
