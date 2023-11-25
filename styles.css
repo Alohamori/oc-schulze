@@ -1,0 +1,116 @@
+* {
+  margin: 0; padding: 0; border: 0;
+  font-size: 100%; font: inherit;
+  vertical-align: baseline;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans');
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: radial-gradient(#6AA5C5, #22428A) fixed;
+  color: #004;
+}
+
+table {
+  margin: 0 auto 2em auto;
+  background: linear-gradient(#3333, #3333) no-repeat;
+  background-size: 0 0;
+}
+
+thead { height: 6.5em; }
+th.rotate { white-space: nowrap; }
+th.rotate > div {
+  width: 1.2em;
+  transform: translate(0.4em, 4.75em) rotate(-45deg);
+}
+th.rotate > div > span { font-size: 90%; }
+td { vertical-align: middle; }
+:not(thead) > tr:hover { background-color: #3333; }
+
+.clipped tr.low { display: none; }
+.hide { visibility: hidden; font-size: 0; }
+
+b { font-weight: bold; }
+
+#q { color: #fff8; cursor: pointer; }
+#q:hover { color: white; }
+#help { width: 80%; margin: 1em auto; text-align: center; font-size: 90%; display: none; }
+#hex { border-bottom: 3px dotted #530C2E; cursor: pointer; }
+
+.mark { display: inline-block; width: 1.2em; height: 1.2em; border: 1px solid black; }
+.win { background-color: #060d; }
+.lose { background-color: #c00d; }
+.twin { background-color: #042b5ddd; }
+.lbsp { background-color: #016880dd; }
+.upset { background-color: #63003cdd; }
+.setup { background-color: #754f79dd; }
+.dunno { background-color: #0002; }
+.tie { background-color: #555d;}
+.self { background-color: #0008; }
+
+.res {
+  position: relative;
+  font-size: 80%;
+  text-align: center;
+  padding: 0.4em;
+  font-weight: bold;
+  border: 2px solid transparent;
+  width: 1.2em;
+  height: 1.2em;
+  color: white;
+}
+
+.res .tip {
+  display: none;
+  position: absolute;
+  min-width: 12.5em;
+  padding: 0.25em;
+  font-weight: normal;
+  top: 1em;
+  z-index: 1;
+  border: 1px solid black;
+  left: 50%;
+  transform: translate(21.5%, -50%);
+  white-space: nowrap;
+  background: inherit;
+}
+
+.res a { color: inherit; text-decoration: none; }
+.res:hover, .shadow { border-color: white; }
+.res:hover .tip, .shadow .tip { display: block; }
+.tip b { font-size: 120%; }
+.hl { transform: translate(-121.5%, -50%) !important; }
+.wl { position: absolute; top: -0.45em; right: 0; text-align: right; font-size: 110%; }
+.ldot { color: #0008; }
+.wdot { color: #fff8; }
+.no-res { width: 1.2em; height: 1.2em; }
+
+.wins, .rsh { font-weight: bold; vertical-align: bottom; padding: 0 0.5em; }
+.spw, .rs { text-align: center; }
+
+h1 { text-align: center; font-size: 2em; font-weight: bold; }
+h2 { text-align: center; font-size: 1.2em; font-weight: bold; }
+h2 a { color: inherit; }
+
+.tn { text-align: right; padding: 0 0.25em; }
+.tn a { color: inherit; }
+.cond { font-weight: bold; color: #ccc; }
+.expando { height: 1em; cursor: s-resize; }
+.expando div { border-top: 3px dotted #530C2E; }
+.sh { vertical-align: middle; font-size: 150%; font-weight: bold; }
+.sym { font-size: 130%; line-height: 1em; }
+
+.sortable thead th:not(.no-sort) {
+  cursor: pointer;
+  position: relative;
+}
+.sortable thead th:not(.no-sort)::after, .sortable thead th:not(.no-sort)::before {
+  position: absolute; bottom: -3px; right: -3px;
+  transition: color 0.1s ease-in-out;
+  color: transparent;
+}
+.sortable thead th:not(.no-sort)::after { content: "▸"; }
+.sortable thead th:not(.no-sort):hover::after { color: inherit; }
+.sortable thead th:not(.no-sort)[aria-sort=descending]::after { color: inherit; content: "▾"; }
+.sortable thead th:not(.no-sort)[aria-sort=ascending]::after { color: inherit; content: "▴"; }

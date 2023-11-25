@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Schulzetized OC Rankings</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/gh/tofsjonas/sortable@latest/sortable.min.js"></script>
+  </head>
+  <body>
+    <h1>&nbsp;&nbsp;Only Connect Reranked <span id="q" onclick="javascript: toggle_help();">?</span></h1>
+    <h2>using <a href="https://en.wikipedia.org/wiki/Schulze_method">the Schulze method</a></h2>
+    <div id="help">
+      Cells with values contain the strength of the strongest path (by average margin of victory) from the team on the left to the team at the top.<br>You can hover over these to see the details of the pairing. The teams are sorted by their Schulze results (number of teams against whom they have a stronger path), but you can click the headings to sort alphabetically or by the number of real tournament rounds survived.<br>The tables are truncated to exclude teams with no positive result, but these can be revealed by <span id="hex" title="expand all" onclick="javascript: expand_all();">expanding</span> the table.<br>Finally, the meanings of the colors are as follows:<br>
+      <div class="mark win"></div> and <div class="mark lose"></div> indicate "standard" wins and losses, where actual margin of victory is sufficient to determine the pairwise result.<br>
+      <div class="mark twin"></div> represents a theoretical win; the teams never played, but the path from A to B is stronger than the (usually nonexistent) path from B to A.<br>
+      <div class="mark lbsp"></div> denotes situations wherein a team's result was improved by Schulze, but not by enough to win the pairing.<br>
+      <div class="mark upset"></div> and <div class="mark setup"></div> are reserved for the six cases in which a team lost an actual match to a Schulze-weaker one.<br>
+      <div class="mark dunno"></div> can be read as an implicit zero; the teams never played and there exists no theoretical path to victory.
+    </div><br>
+    <script src="misc.js"></script>
+  </body>
+</html>
